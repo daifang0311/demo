@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public enum ExceptionEnum {
-    CATEGORY_NOT_FOUND(400, "价格不能为空！");
+    CATEGORY_NOT_FOUND(400, "价格不能为空！"), BRAND_NOT_FOUND(400,"品牌不能为空" );
+//    BRAND_NOT_FOUND(400,"品牌不能为空");
     private int status;
     private String msg;
 
