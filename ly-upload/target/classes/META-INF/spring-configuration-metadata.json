@@ -1,0 +1,27 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.leyou.properties.UploadProperties",
+      "name": "ly.upload",
+      "type": "com.leyou.properties.UploadProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.leyou.properties.UploadProperties",
+      "name": "ly.upload.allow-image-types",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.leyou.properties.UploadProperties",
+      "name": "ly.upload.base-dir",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.leyou.properties.UploadProperties",
+      "name": "ly.upload.base-url",
+      "type": "java.lang.String"
+    }
+  ]
+}
