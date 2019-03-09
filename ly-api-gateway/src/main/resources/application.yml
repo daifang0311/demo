@@ -27,20 +27,3 @@ hystrix:  #熔断器
         isolation:
           thread:
             timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
-ly:
-  cors:
-    allowedOrigins:
-      - http://manage.leyou.com
-    allowCredentials: true
-    allowedMethods:
-      - GET
-      - POST
-      - DELETE
-      - PUT
-      - OPTIONS
-      - HEAD
-      - PATCH
-    maxAge: 3600
-    filterPath: /**
-    allowedHeaders:
-      - "*"
