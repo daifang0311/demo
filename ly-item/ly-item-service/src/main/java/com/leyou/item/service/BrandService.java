@@ -11,6 +11,7 @@ import com.leyou.item.mapper.BrandMapper;
 import com.leyou.item.pojo.Brand;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -19,7 +20,7 @@ import java.util.List;
 
 @Service
 public class BrandService {
-    @Resource
+    @Autowired
     private BrandMapper brandMapper;
 
    //- page：当前页，int   rows：每页大小，int  sortBy：排序字段，String
@@ -46,5 +47,13 @@ public class BrandService {
         // 封装并返回
         PageInfo<Brand> info = new PageInfo<>(brands);
         return new PageResult<>(info.getTotal(), brands);
+    }
+
+    public Brand queryById(Long id){
+        Brand brand = brandMapper.selectByPrimaryKey(id);
+        if (brand==null){
+            throw new LyException(ExceptionEnum.BRAND_NOT_FOUND);
+        }
+        return brand;
     }
 }

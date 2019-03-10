@@ -16,7 +16,7 @@ import java.util.Locale;
 @Service
 public class CategoryService {
 
-    @Resource
+    @Autowired
     private CategoryMapper categoryMapper;
 
     /**
@@ -31,6 +31,13 @@ public class CategoryService {
         List<Category> list = categoryMapper.select(r);
         // 判断是否为空
         if (CollectionUtils.isEmpty(list)) {
+            throw new LyException(ExceptionEnum.CATEGORY_NOT_FOUND);
+        }
+        return list;
+    }
+    public List<Category> queryByIds(List<Long> ids){
+        List<Category> list = categoryMapper.selectByIdList(ids);
+        if (CollectionUtils.isEmpty(list)){
             throw new LyException(ExceptionEnum.CATEGORY_NOT_FOUND);
         }
         return list;
